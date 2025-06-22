@@ -190,7 +190,7 @@ export const CopyTradingSection: React.FC<CopyTradingSectionProps> = ({ classNam
         <div className="space-y-3">
           {filteredTrades.map((trade) => (
             <div key={trade.id} className="bg-gray-800/50 rounded-lg p-4 hover:bg-gray-800/70 transition-colors">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-medium text-sm">
@@ -216,17 +216,14 @@ export const CopyTradingSection: React.FC<CopyTradingSectionProps> = ({ classNam
                     </div>
                   </div>
                 </div>
-                
-                <div className="flex items-center space-x-3">
+                <div className="flex flex-row sm:flex-col items-center sm:items-end space-x-2 sm:space-x-0 sm:space-y-2 mt-2 sm:mt-0 w-full sm:w-auto">
                   <div className="text-right">
-                    <div className={`text-sm font-medium ${trade.pnl && trade.pnl > 0 ? 'text-green-400' : 'text-red-400'}`}>
-                      {trade.pnl && trade.pnl > 0 ? '+' : ''}{trade.pnl}%
-                    </div>
+                    <div className={`text-sm font-medium ${trade.pnl && trade.pnl > 0 ? 'text-green-400' : 'text-red-400'}`}>{trade.pnl && trade.pnl > 0 ? '+' : ''}{trade.pnl}%</div>
                     <div className="text-xs text-gray-400">P&L</div>
                   </div>
                   <button
                     onClick={() => handleCopyTrade(trade)}
-                    className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                    className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors w-full sm:w-auto sm:ml-2 mt-2 sm:mt-0"
                   >
                     <Zap className="w-4 h-4" />
                     <span>Copy</span>
