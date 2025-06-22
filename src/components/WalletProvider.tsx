@@ -7,6 +7,7 @@ import {
   TorusWalletAdapter,
   LedgerWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
+import { WalletConnectWalletAdapter } from '@solana/wallet-adapter-walletconnect';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { clusterApiUrl } from '@solana/web3.js';
 import { useMemo } from 'react';
@@ -29,6 +30,19 @@ export const WalletProviderComponent: FC<Props> = ({ children }) => {
       new SolflareWalletAdapter({ network }),
       new TorusWalletAdapter(),
       new LedgerWalletAdapter(),
+      new WalletConnectWalletAdapter({
+        network,
+        options: {
+          relayUrl: 'wss://relay.walletconnect.com',
+          projectId: 'e899c82be21d4acca2c8aec45e893598', // Replace with your own WalletConnect Project ID
+          metadata: {
+            name: 'JupiTrade',
+            description: 'Solana Social Trading Platform',
+            url: 'https://your-app-url.com',
+            icons: ['https://avatars.githubusercontent.com/u/35608259?s=200'],
+          },
+        },
+      }),
     ],
     [network]
   );
