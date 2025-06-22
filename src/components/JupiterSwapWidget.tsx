@@ -207,8 +207,8 @@ export const JupiterSwapWidget: React.FC<JupiterSwapWidgetProps> = ({
   }
 
   return (
-    <div className={`bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 p-6 card-hover ${className}`}>
-      <div className="flex items-center justify-between mb-6">
+    <div className={`bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 p-4 sm:p-6 card-hover ${className}`}>
+      <div className="flex items-center justify-between mb-6 pr-2 sm:pr-0">
         <h3 className="text-lg font-semibold text-white flex items-center">
           <div className="w-6 h-6 bg-gradient-primary rounded-full flex items-center justify-center mr-2 glow-cyan">
             <Zap className="w-4 h-4 text-white" />
@@ -217,7 +217,7 @@ export const JupiterSwapWidget: React.FC<JupiterSwapWidgetProps> = ({
         </h3>
         <button
           onClick={() => setShowSettings(!showSettings)}
-          className="text-gray-400 hover:text-white transition-colors"
+          className="text-gray-400 hover:text-white transition-colors pr-2 sm:pr-0"
         >
           <Settings className="w-5 h-5" />
         </button>
@@ -268,7 +268,7 @@ export const JupiterSwapWidget: React.FC<JupiterSwapWidgetProps> = ({
 
       <div className="space-y-4">
         {/* Input Token */}
-        <div className="bg-gray-800/50 rounded-lg p-4 border border-accent-500/10">
+        <div className="bg-gray-800/50 rounded-lg p-3 sm:p-4 border border-accent-500/10">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm text-gray-400">From</span>
           </div>
@@ -276,7 +276,7 @@ export const JupiterSwapWidget: React.FC<JupiterSwapWidgetProps> = ({
             <select
               value={inputToken}
               onChange={(e) => setInputToken(e.target.value)}
-              className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white flex-1"
+              className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-3 sm:py-2 text-white flex-1 text-sm"
             >
               {Object.entries(POPULAR_TOKENS).map(([symbol, address]) => (
                 <option key={address} value={address}>{symbol}</option>
@@ -287,7 +287,7 @@ export const JupiterSwapWidget: React.FC<JupiterSwapWidgetProps> = ({
               value={inputAmount}
               onChange={(e) => setInputAmount(e.target.value)}
               placeholder="0.00"
-              className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white text-right flex-1"
+              className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-3 sm:py-2 text-white text-right flex-1 text-sm"
             />
           </div>
         </div>
@@ -303,7 +303,7 @@ export const JupiterSwapWidget: React.FC<JupiterSwapWidgetProps> = ({
         </div>
 
         {/* Output Token */}
-        <div className="bg-gray-800/50 rounded-lg p-4 border border-accent-500/10">
+        <div className="bg-gray-800/50 rounded-lg p-3 sm:p-4 border border-accent-500/10">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm text-gray-400">To</span>
             {quote && (
@@ -316,13 +316,13 @@ export const JupiterSwapWidget: React.FC<JupiterSwapWidgetProps> = ({
             <select
               value={outputToken}
               onChange={(e) => setOutputToken(e.target.value)}
-              className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white flex-1"
+              className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-3 sm:py-2 text-white flex-1 text-sm"
             >
               {Object.entries(POPULAR_TOKENS).map(([symbol, address]) => (
                 <option key={address} value={address}>{symbol}</option>
               ))}
             </select>
-            <div className="bg-gray-700 rounded-lg px-3 py-2 text-gray-400 flex-1 text-right">
+            <div className="bg-gray-700 rounded-lg px-3 py-3 sm:py-2 text-gray-400 flex-1 text-right text-sm">
               {loading ? 'Loading...' : formatOutputAmount()}
             </div>
           </div>
