@@ -76,58 +76,58 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div className="relative max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 pt-16 pb-10">
           {/* Navigation */}
-          <nav className="flex items-center justify-between mb-16">
+          <nav className="flex flex-col sm:flex-row items-center justify-between mb-10 gap-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center glow-cyan">
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold gradient-text">JupiTrade</span>
+              <span className="text-xl sm:text-2xl font-bold gradient-text">JupiTrade</span>
             </div>
-            <WalletMultiButton className="!bg-gradient-primary hover:!bg-gradient-secondary !transition-all !duration-200 !glow-cyan" />
+            <WalletMultiButton className="!bg-gradient-primary hover:!bg-gradient-secondary !transition-all !duration-200 !glow-cyan text-xs sm:text-base" />
           </nav>
 
           {/* Hero Content */}
           <div className="text-center max-w-4xl mx-auto">
             <div className="mb-8">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 Trade Smarter with{' '}
                 <span className="gradient-text">JupiTrade</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-4 leading-relaxed">
+              <p className="text-base sm:text-xl md:text-2xl text-gray-300 mb-4 leading-relaxed">
                 The premier social trading platform for Solana
               </p>
-              <div className="bg-gradient-to-r from-yellow-900/30 to-orange-900/30 border border-yellow-500/30 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
-                <p className="text-yellow-300 font-medium text-lg">
+              <div className="bg-gradient-to-r from-yellow-900/30 to-orange-900/30 border border-yellow-500/30 rounded-lg p-3 sm:p-4 mb-8 max-w-2xl mx-auto">
+                <p className="text-yellow-300 font-medium text-sm sm:text-lg">
                   ⚠️ <strong>Warning:</strong> JupiTrade may cause excessive profits. 
                   Prolonged use may lead to financial happiness.
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-10">
               <button
                 onClick={onGetStarted}
-                className="bg-gradient-primary hover:bg-gradient-secondary text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 glow-cyan flex items-center space-x-2 text-lg"
+                className="w-full sm:w-auto bg-gradient-primary hover:bg-gradient-secondary text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-200 glow-cyan flex items-center justify-center space-x-2 text-base sm:text-lg"
               >
                 <span>Start Trading</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="bg-gray-800/50 hover:bg-gray-700/50 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 border border-primary-500/20">
+              <button className="w-full sm:w-auto bg-gray-800/50 hover:bg-gray-700/50 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-200 border border-primary-500/20">
                 View Leaderboard
               </button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-10">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
-                  <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 border border-primary-500/20 card-hover">
-                    <Icon className="w-8 h-8 text-primary-400 mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                  <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-primary-500/20 card-hover">
+                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary-400 mx-auto mb-2 sm:mb-3" />
+                    <div className="text-lg sm:text-2xl font-bold text-white mb-1">{stat.value}</div>
+                    <div className="text-gray-400 text-xs sm:text-sm">{stat.label}</div>
                   </div>
                 );
               })}
@@ -137,27 +137,27 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Features Section */}
-      <div className="py-20 bg-gray-900/30 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
+      <div className="py-10 sm:py-20 bg-gray-900/30 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
               Powered by <span className="gradient-text">Jupiter Exchange</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto">
               Experience the future of social trading with cutting-edge technology and community-driven insights
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 border border-primary-500/20 card-hover group">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200`}>
-                    <Icon className="w-6 h-6 text-white" />
+                <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-primary-500/20 card-hover group">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${feature.color} rounded-lg flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-200`}>
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-base sm:text-xl font-semibold text-white mb-2 sm:mb-3">{feature.title}</h3>
+                  <p className="text-gray-400 text-xs sm:text-base leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -166,35 +166,35 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* Testimonials Section */}
-      <div className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
+      <div className="py-10 sm:py-20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
               Trusted by <span className="gradient-text">Top Traders</span>
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-base sm:text-xl text-gray-300">
               See what successful traders are saying about JupiTrade
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 border border-primary-500/20 card-hover">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden">
+              <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-primary-500/20 card-hover">
+                <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
                     <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
-                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                    <h4 className="text-sm sm:text-base text-white font-semibold">{testimonial.name}</h4>
+                    <p className="text-xs sm:text-sm text-gray-400">{testimonial.role}</p>
                   </div>
                   <div className="ml-auto">
-                    <span className="bg-gradient-to-r from-secondary-500 to-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-gradient-to-r from-secondary-500 to-primary-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
                       {testimonial.roi} ROI
                     </span>
                   </div>
                 </div>
-                <p className="text-gray-300 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-300 italic text-xs sm:text-base">"{testimonial.quote}"</p>
               </div>
             ))}
           </div>
@@ -202,55 +202,55 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </div>
 
       {/* CTA Section */}
-      <div className="py-20 bg-gradient-to-r from-primary-900/20 to-secondary-900/20">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
+      <div className="py-10 sm:py-20 bg-gradient-to-r from-primary-900/20 to-secondary-900/20">
+        <div className="max-w-4xl mx-auto text-center px-2 sm:px-4 lg:px-8">
+          <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">
             Ready to <span className="gradient-text">Maximize Your Profits?</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-base sm:text-xl text-gray-300 mb-6 sm:mb-8">
             Join thousands of traders who are already earning with JupiTrade's social trading platform
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6 sm:mb-8">
             <button
               onClick={onGetStarted}
-              className="bg-gradient-primary hover:bg-gradient-secondary text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 glow-cyan flex items-center space-x-2 text-lg"
+              className="w-full sm:w-auto bg-gradient-primary hover:bg-gradient-secondary text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-all duration-200 glow-cyan flex items-center justify-center space-x-2 text-base sm:text-lg"
             >
               <span>Get Started Now</span>
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
 
-          <div className="flex items-center justify-center space-x-6 text-gray-400">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-gray-400">
             <div className="flex items-center space-x-2">
               <CheckCircle className="w-5 h-5 text-secondary-400" />
-              <span>No fees to start</span>
+              <span className="text-xs sm:text-base">No fees to start</span>
             </div>
             <div className="flex items-center space-x-2">
               <CheckCircle className="w-5 h-5 text-secondary-400" />
-              <span>Non-custodial</span>
+              <span className="text-xs sm:text-base">Non-custodial</span>
             </div>
             <div className="flex items-center space-x-2">
               <CheckCircle className="w-5 h-5 text-secondary-400" />
-              <span>Instant setup</span>
+              <span className="text-xs sm:text-base">Instant setup</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="py-12 bg-gray-900/80 backdrop-blur-sm border-t border-primary-500/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+      <footer className="py-8 sm:py-12 bg-gray-900/80 backdrop-blur-sm border-t border-primary-500/20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+            <div className="flex items-center space-x-3 mb-2 md:mb-0">
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold gradient-text">JupiTrade</span>
+              <span className="text-lg sm:text-xl font-bold gradient-text">JupiTrade</span>
             </div>
-            <div className="text-gray-400 text-center md:text-right">
-              <p className="mb-2">Powered by Jupiter Exchange • Built on Solana</p>
-              <p className="text-sm">© 2024 JupiTrade. Trade responsibly.</p>
+            <div className="text-gray-400 text-center md:text-right text-xs sm:text-sm">
+              <p className="mb-1 sm:mb-2">Powered by Jupiter Exchange • Built on Solana</p>
+              <p className="text-xs sm:text-sm">© 2024 JupiTrade. Trade responsibly.</p>
             </div>
           </div>
         </div>

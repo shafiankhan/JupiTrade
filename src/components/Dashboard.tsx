@@ -134,14 +134,14 @@ export const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold gradient-text">Dashboard</h1>
-        <div className="flex items-center space-x-4">
+    <div className="space-y-6 px-2 sm:px-4 lg:px-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h1 className="text-2xl sm:text-3xl font-bold gradient-text">Dashboard</h1>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2 sm:gap-0">
           <div className="flex bg-gray-800/50 rounded-lg p-1 border border-primary-500/20">
             <button
               onClick={() => setActiveSection('overview')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                 activeSection === 'overview'
                   ? 'bg-gradient-primary text-white glow-cyan'
                   : 'text-gray-400 hover:text-white'
@@ -151,7 +151,7 @@ export const Dashboard: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveSection('copy-trading')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                 activeSection === 'copy-trading'
                   ? 'bg-gradient-primary text-white glow-cyan'
                   : 'text-gray-400 hover:text-white'
@@ -160,7 +160,7 @@ export const Dashboard: React.FC = () => {
               Copy Trading
             </button>
           </div>
-          <div className="text-sm text-gray-400">
+          <div className="text-xs sm:text-sm text-gray-400">
             Welcome back, {user?.username || `${publicKey?.toString().slice(0, 6)}...${publicKey?.toString().slice(-4)}`}
           </div>
         </div>
@@ -171,7 +171,7 @@ export const Dashboard: React.FC = () => {
       ) : (
         <>
           {/* Stats Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 backdrop-blur-sm rounded-lg p-4 border border-secondary-500/20 card-hover glow-green">
               <div className="flex items-center space-x-2">
                 <TrendingUp className="w-5 h-5 text-secondary-400" />
@@ -225,7 +225,7 @@ export const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
             {/* Jupiter Swap Widget */}
             <div className="lg:col-span-1">
               <JupiterSwapWidget onSwapComplete={handleSwapComplete} />
@@ -237,7 +237,7 @@ export const Dashboard: React.FC = () => {
             </div>
 
             {/* Portfolio Performance */}
-            <div className="lg:col-span-1 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 p-6 card-hover">
+            <div className="lg:col-span-1 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 p-4 sm:p-6 card-hover">
               <h3 className="text-lg font-semibold text-white mb-4">Portfolio Performance</h3>
               <div className="h-64">
                 <ResponsiveContainer width="100%" height="100%">
@@ -272,9 +272,9 @@ export const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
             {/* Recent Trades */}
-            <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 p-6 card-hover">
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 p-4 sm:p-6 card-hover">
               <h3 className="text-lg font-semibold text-white mb-4">Recent Trades</h3>
               <div className="space-y-3">
                 {recentTrades.map((trade) => (
@@ -320,7 +320,7 @@ export const Dashboard: React.FC = () => {
             </div>
 
             {/* Followed Traders */}
-            <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 p-6 card-hover">
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 p-4 sm:p-6 card-hover">
               <h3 className="text-lg font-semibold text-white mb-4">Followed Traders</h3>
               <div className="space-y-3">
                 {followedTraders.map((trader) => (

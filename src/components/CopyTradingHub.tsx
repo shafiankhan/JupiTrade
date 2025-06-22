@@ -130,35 +130,35 @@ export const CopyTradingHub: React.FC = () => {
 
   if (!connected) {
     return (
-      <div className="flex items-center justify-center min-h-96">
-        <div className="text-center">
+      <div className="flex items-center justify-center min-h-96 px-2">
+        <div className="text-center w-full max-w-xs">
           <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <Copy className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-xl font-semibold text-white mb-2">Connect Your Wallet</h2>
-          <p className="text-gray-400">Connect your Solana wallet to access copy trading features</p>
+          <p className="text-gray-400 text-sm">Connect your Solana wallet to access copy trading features</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 px-2 sm:px-4 md:px-0">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
             <Copy className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-white">Copy Trading Hub</h1>
-            <p className="text-gray-400">Real-time trade copying from top performers</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">Copy Trading Hub</h1>
+            <p className="text-gray-400 text-sm sm:text-base">Real-time trade copying from top performers</p>
           </div>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
           <button
             onClick={() => setLiveTrading(!liveTrading)}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+            className={`flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-colors text-sm w-full sm:w-auto ${
               liveTrading 
                 ? 'bg-green-600 hover:bg-green-700 text-white' 
                 : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
@@ -167,7 +167,7 @@ export const CopyTradingHub: React.FC = () => {
             {liveTrading ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
             <span>{liveTrading ? 'Live' : 'Paused'}</span>
           </button>
-          <button className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors">
+          <button className="flex items-center justify-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors text-sm w-full sm:w-auto">
             <Settings className="w-4 h-4" />
             <span>Settings</span>
           </button>
@@ -175,7 +175,7 @@ export const CopyTradingHub: React.FC = () => {
       </div>
 
       {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 backdrop-blur-sm rounded-lg p-4 border border-green-500/20">
           <div className="flex items-center space-x-2">
             <Activity className="w-5 h-5 text-green-400" />
@@ -230,13 +230,13 @@ export const CopyTradingHub: React.FC = () => {
       </div>
 
       {/* Auto Copy Settings */}
-      <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-gray-800 p-6">
-        <div className="flex items-center justify-between mb-4">
+      <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-gray-800 p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2 sm:gap-0">
           <div>
-            <h3 className="text-lg font-semibold text-white">Auto Copy Settings</h3>
-            <p className="text-sm text-gray-400">Configure automatic trade copying for followed traders</p>
+            <h3 className="text-base sm:text-lg font-semibold text-white">Auto Copy Settings</h3>
+            <p className="text-xs sm:text-sm text-gray-400">Configure automatic trade copying for followed traders</p>
           </div>
-          <label className="relative inline-flex items-center cursor-pointer">
+          <label className="relative inline-flex items-center cursor-pointer mt-2 sm:mt-0">
             <input
               type="checkbox"
               checked={autoCopyEnabled}
@@ -249,7 +249,7 @@ export const CopyTradingHub: React.FC = () => {
 
         {autoCopyEnabled && (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">
                   Default Copy Amount (SOL)
@@ -290,11 +290,11 @@ export const CopyTradingHub: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-3 flex items-start space-x-2">
+            <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-3 flex items-start space-x-2 text-xs sm:text-sm">
               <AlertTriangle className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
-              <div className="text-yellow-400 text-sm">
+              <div className="text-yellow-400">
                 <p className="font-medium mb-1">Auto Copy Warning</p>
-                <p>Auto copying will execute trades automatically when followed traders make moves. Ensure you have sufficient balance and understand the risks involved.</p>
+                <p className="text-sm">Auto copying will execute trades automatically when followed traders make moves. Ensure you have sufficient balance and understand the risks involved.</p>
               </div>
             </div>
           </>
@@ -302,13 +302,13 @@ export const CopyTradingHub: React.FC = () => {
       </div>
 
       {/* Live Trade Feed */}
-      <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-gray-800 p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-white flex items-center">
+      <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-gray-800 p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2 sm:gap-0">
+          <h3 className="text-base sm:text-lg font-semibold text-white flex items-center">
             <div className={`w-2 h-2 rounded-full mr-2 ${liveTrading ? 'bg-green-400 animate-pulse' : 'bg-gray-400'}`}></div>
             Live Trade Feed
           </h3>
-          <div className="text-sm text-gray-400">
+          <div className="text-xs sm:text-sm text-gray-400">
             {filteredTrades.length} trades • {liveTrading ? 'Live' : 'Paused'}
           </div>
         </div>
@@ -324,11 +324,11 @@ export const CopyTradingHub: React.FC = () => {
             }
 
             return (
-              <div key={trade.id} className={`bg-gray-800/50 rounded-lg p-4 hover:bg-gray-800/70 transition-colors border-l-4 ${
+              <div key={trade.id} className={`bg-gray-800/50 rounded-lg p-3 sm:p-4 hover:bg-gray-800/70 transition-colors border-l-4 ${
                 trade.trade_type === 'buy' ? 'border-green-400' : 'border-red-400'
               }`}>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+                  <div className="flex items-center space-x-3 sm:space-x-4 w-full">
                     <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center overflow-hidden">
                       {trade.trader_avatar ? (
                         <img src={trade.trader_avatar} alt={trade.trader_username} className="w-full h-full object-cover" />
@@ -354,10 +354,10 @@ export const CopyTradingHub: React.FC = () => {
                           </span>
                         )}
                       </div>
-                      <div className="text-sm text-gray-400">
+                      <div className="text-xs sm:text-sm text-gray-400">
                         {trade.input_amount.toFixed(2)} {trade.input_token} → {trade.output_amount.toFixed(2)} {trade.output_token}
                       </div>
-                      <div className="flex items-center space-x-4 text-xs text-gray-500 mt-1">
+                      <div className="flex items-center space-x-2 sm:space-x-4 text-xs text-gray-500 mt-1">
                         <span>{formatTimeAgo(trade.timestamp)}</span>
                         <span className="flex items-center space-x-1">
                           <Users className="w-3 h-3" />
@@ -367,7 +367,7 @@ export const CopyTradingHub: React.FC = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 sm:space-x-3 mt-2 sm:mt-0">
                     <div className="text-right">
                       {trade.pnl && (
                         <div className={`text-sm font-medium ${trade.pnl > 0 ? 'text-green-400' : 'text-red-400'}`}>
@@ -379,7 +379,7 @@ export const CopyTradingHub: React.FC = () => {
                     {!isAutoCopied && (
                       <button
                         onClick={() => handleCopyTrade(trade)}
-                        className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                        className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 sm:px-4 rounded-lg transition-colors text-xs sm:text-sm"
                       >
                         <Zap className="w-4 h-4" />
                         <span>Copy</span>

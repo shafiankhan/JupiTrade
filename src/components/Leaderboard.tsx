@@ -31,14 +31,14 @@ export const Leaderboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold gradient-text">Top Traders</h1>
-        <div className="text-sm text-gray-400">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h1 className="text-2xl sm:text-3xl font-bold gradient-text">Top Traders</h1>
+        <div className="text-xs sm:text-sm text-gray-400">
           Updated in real-time
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-gradient-to-r from-primary-900/50 to-accent-900/50 backdrop-blur-sm rounded-lg p-4 border border-primary-500/20 card-hover">
           <div className="flex items-center space-x-2">
             <TrendingUp className="w-5 h-5 text-secondary-400" />
@@ -80,30 +80,30 @@ export const Leaderboard: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 overflow-hidden card-hover">
-        <div className="overflow-x-auto">
-          <table className="w-full">
+      <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg border border-primary-500/20 overflow-x-auto card-hover">
+        <div className="min-w-[600px] md:min-w-0 overflow-x-auto">
+          <table className="w-full text-sm">
             <thead className="bg-gray-800/50">
               <tr>
-                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                   Rank
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                   Trader
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                   ROI
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                   Win Rate
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                   Volume
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                   Trades
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                   Followers
                 </th>
               </tr>
@@ -111,14 +111,14 @@ export const Leaderboard: React.FC = () => {
             <tbody className="divide-y divide-gray-800">
               {traders.map((trader, index) => (
                 <tr key={trader.id} className="hover:bg-gray-800/50 transition-colors cursor-pointer">
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-2 sm:px-4 py-3 whitespace-nowrap">
                     <div className="flex items-center">
                       {getRankIcon(index + 1)}
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-2 sm:px-4 py-3 whitespace-nowrap">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center overflow-hidden">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-full flex items-center justify-center overflow-hidden">
                         {trader.avatar_url ? (
                           <img src={trader.avatar_url} alt={trader.username} className="w-full h-full object-cover" />
                         ) : (
@@ -128,14 +128,14 @@ export const Leaderboard: React.FC = () => {
                         )}
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-white">{trader.username}</div>
+                        <div className="text-xs sm:text-sm font-medium text-white">{trader.username}</div>
                         <div className="text-xs text-gray-400">
                           {trader.wallet_address.slice(0, 6)}...{trader.wallet_address.slice(-4)}
                         </div>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-2 sm:px-4 py-3 whitespace-nowrap">
                     <div className={`flex items-center space-x-1 ${trader.roi >= 0 ? 'text-secondary-400' : 'text-red-400'}`}>
                       {trader.roi >= 0 ? (
                         <TrendingUp className="w-4 h-4" />
@@ -145,16 +145,16 @@ export const Leaderboard: React.FC = () => {
                       <span className="font-medium">{formatPercentage(trader.roi)}</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-2 sm:px-4 py-3 whitespace-nowrap">
                     <span className="text-white font-medium">{formatPercentage(trader.win_rate)}</span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-2 sm:px-4 py-3 whitespace-nowrap">
                     <span className="text-white font-medium">${formatNumber(trader.total_volume)}</span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-2 sm:px-4 py-3 whitespace-nowrap">
                     <span className="text-white font-medium">{formatNumber(trader.total_trades)}</span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-2 sm:px-4 py-3 whitespace-nowrap">
                     <span className="text-white font-medium">{formatNumber(trader.followers_count)}</span>
                   </td>
                 </tr>
