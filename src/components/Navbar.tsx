@@ -22,8 +22,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
         <div className="flex flex-wrap items-center justify-between h-16 gap-y-2">
           <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center glow-cyan">
-              {/* Changed from <TrendingUp ... /> to "JT" */}
-              <span className="text-white font-bold text-lg">JT</span>
+              {/* SVG logo matching the provided image */}
+              <svg viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path d="M10 20a10 10 0 1 0 10 10" stroke="#E5E7EB" strokeWidth="3" strokeLinecap="round"/>
+                  <rect x="21" y="10" width="13" height="4" rx="1.5" fill="#E5E7EB"/>
+                  <rect x="21" y="18" width="13" height="4" rx="1.5" fill="#E5E7EB"/>
+                  <rect x="17" y="10" width="4" height="18" rx="1.5" fill="#E5E7EB"/>
+                </g>
+              </svg>
             </div>
             <span className="text-base sm:text-lg md:text-xl font-bold gradient-text">JupiTrade</span>
           </div>
