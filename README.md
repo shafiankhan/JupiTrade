@@ -1,6 +1,20 @@
 # JupiTrade - Social Trading Platform
+# ⚠️ Warning: JupiTrade may cause excessive profits. Prolonged use may lead to financial happiness.
 
 A comprehensive social trading platform for Solana that allows users to follow top traders and automatically copy their trades using Jupiter Exchange APIs.
+![image](https://github.com/user-attachments/assets/bf319344-e4a7-46ce-a6e2-1cb8173d0112)
+
+# connecting wallet........
+![image](https://github.com/user-attachments/assets/b61c0cfe-5d17-47c1-b9ff-2efdf8759ba4)
+
+# Dashboard
+![image](https://github.com/user-attachments/assets/e7fdf71d-2481-46b5-9ad4-756944b70c33)
+
+# CopyTrading Hub
+![image](https://github.com/user-attachments/assets/dfa43262-8d27-46bf-915c-47a984c7f396)
+
+
+
 
 ## 🚀 Jupiter Exchange Integration
 
