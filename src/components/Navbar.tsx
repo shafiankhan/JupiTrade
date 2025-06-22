@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { TrendingUp, Users, BarChart3, Copy } from 'lucide-react';
+import { TrendingUp, Users, BarChart3, Copy, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   activeTab: string;
@@ -8,6 +8,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const tabs = [
     { id: 'leaderboard', label: 'Leaderboard', icon: TrendingUp },
     { id: 'traders', label: 'Traders', icon: Users },
@@ -26,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               </div>
               <span className="text-xl font-bold gradient-text">JupiTrade</span>
             </div>
-            
+            {/* Desktop Tabs */}
             <div className="hidden md:flex items-center space-x-1">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
@@ -48,11 +49,46 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 md:space-x-4">
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/50 focus:outline-none"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-label="Open menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
             <WalletMultiButton className="!bg-gradient-primary hover:!bg-gradient-secondary !transition-all !duration-200 !glow-cyan" />
           </div>
         </div>
       </div>
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-gray-900/95 border-b border-primary-500/20 px-4 pb-4 animate-fade-in">
+          <div className="flex flex-col space-y-2">
+            {tabs.map((tab) => {
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-lg transition-all duration-200 w-full text-left ${
+                    activeTab === tab.id
+                      ? 'bg-gradient-primary text-white glow-cyan'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                  }`}
+                >
+                  <Icon className="w-5 h-5" />
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
