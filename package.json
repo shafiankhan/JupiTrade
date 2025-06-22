@@ -17,6 +17,7 @@
     "@solana/wallet-adapter-wallets": "^0.19.18",
     "@solana/web3.js": "^1.87.6",
     "@supabase/supabase-js": "^2.38.5",
+    "buffer": "^6.0.3",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "lucide-react": "^0.344.0",
