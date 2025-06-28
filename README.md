@@ -98,7 +98,7 @@ This platform uses Jupiter's latest API structure with the new endpoints:
 1. **Clone and install dependencies:**
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/shafiankhan/JupiTrade>
 cd solana-social-trading-platform
 npm install
 ```
@@ -287,4 +287,4 @@ For support, create an issue in the GitHub repository or contact the development
 
 **Powered by Jupiter Exchange** - The #1 liquidity aggregator on Solana
 
-**Perfect for Jupiter Hackathon** - Showcasing real-world DeFi use cases with Jupiter's powerful API suite
+**Designed by Team Code Hawk** - Showcasing real-world DeFi use cases with Jupiter's powerful API suite
