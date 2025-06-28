@@ -249,8 +249,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               <span className="text-lg sm:text-xl font-bold gradient-text">JupiTrade</span>
             </div>
             <div className="text-gray-400 text-center md:text-right text-xs sm:text-sm">
-              <p className="mb-1 sm:mb-2">Powered by Jupiter Exchange • Built on Solana</p>
-              <p className="text-xs sm:text-sm">© 2024 JupiTrade. Trade responsibly.</p>
+              <p className="mb-1 sm:mb-2">Powered by Jupiter Exchange • Designed by Code Hawks • Built on Solana</p>
+              <p className="text-xs sm:text-sm">© 2025 JupiTrade. Trade responsibly.</p>
             </div>
           </div>
         </div>
