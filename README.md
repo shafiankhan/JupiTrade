@@ -1,5 +1,5 @@
 # JupiTrade - Social Trading Platform
-# ⚠️ Warning: JupiTrade may cause excessive profits. Prolonged use may lead to financial happiness.
+# ⚠️ Warning: JupiTrade by Shafian khan may cause excessive profits. Prolonged use may lead to financial happiness.
 
 A comprehensive social trading platform for Solana that allows users to follow top traders and automatically copy their trades using Jupiter Exchange APIs.
 
