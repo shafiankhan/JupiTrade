@@ -10,7 +10,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const features = [
     {
       icon: Zap,
-      title: 'Jupiter-Powered Trading',
+      title: 'Jupiter-Powered Trading built by shafian',
       description: 'Best execution across 20+ DEXs with optimal routing and minimal slippage',
       color: 'from-primary-500 to-accent-500'
     },
