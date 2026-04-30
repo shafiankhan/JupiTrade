@@ -10,7 +10,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const features = [
     {
       icon: Zap,
-      title: 'Jupiter-Powered Trading',
+      title: 'Jupiter-Powered Trading built by shafian',
       description: 'Best execution across 20+ DEXs with optimal routing and minimal slippage',
       color: 'from-primary-500 to-accent-500'
     },
@@ -93,14 +93,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <div className="mb-8">
               <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 Trade Smarter with{' '}
-                <span className="gradient-text">JupiTrade</span>
+                <span className="gradient-text">JupiTrade by shafian</span>
               </h1>
               <p className="text-base sm:text-xl md:text-2xl text-gray-300 mb-4 leading-relaxed">
                 The premier social trading platform for Solana
               </p>
               <div className="bg-gradient-to-r from-yellow-900/30 to-orange-900/30 border border-yellow-500/30 rounded-lg p-3 sm:p-4 mb-8 max-w-2xl mx-auto">
                 <p className="text-yellow-300 font-medium text-sm sm:text-lg">
-                  ⚠️ <strong>Warning:</strong> JupiTrade may cause excessive profits. 
+                  ⚠️ <strong>Warning:</strong> JupiTrade may cause excessive profits.
                   Prolonged use may lead to financial happiness.
                 </p>
               </div>
@@ -210,7 +210,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
           <p className="text-base sm:text-xl text-gray-300 mb-6 sm:mb-8">
             Join thousands of traders who are already earning with JupiTrade's social trading platform
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6 sm:mb-8">
             <button
               onClick={onGetStarted}
