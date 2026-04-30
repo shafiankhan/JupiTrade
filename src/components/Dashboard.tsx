@@ -198,7 +198,7 @@ export const Dashboard: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-r from-teal-900/50 to-cyan-900/50 backdrop-blur-sm rounded-lg p-4 border border-accent-500/20 card-hover glow-accent">
+            <div className="bg-gradient-to-r from-rose-900/50 to-red-900/50 backdrop-blur-sm rounded-lg p-4 border border-accent-500/20 card-hover glow-accent">
               <div className="flex items-center space-x-2">
                 <Activity className="w-5 h-5 text-accent-400" />
                 <span className="text-sm text-gray-400">Win Rate</span>
